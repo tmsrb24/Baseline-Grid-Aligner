@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest version="1.0">
+    <extension id="cz.baselinegrid.aligner" version="1.0.0">
+        <host name="InDesign" version="19.0" />
+        <description>
+            <![CDATA[BaselineGridAligner - Nástroj pro zarovnání textu k baseline gridu]]>
+        </description>
+        <license-agreement>
+            <![CDATA[
+            © 2025 BaselineGridAligner
+            Všechna práva vyhrazena.
+            ]]>
+        </license-agreement>
+        <ui-access>
+            <![CDATA[
+            BaselineGridAligner poskytuje nástroje pro zarovnání textu k baseline gridu.
+            Panel najdete v menu Okna > BaselineGridAligner.
+            ]]>
+        </ui-access>
+        <legal-notices>
+            <![CDATA[
+            BaselineGridAligner je chráněn autorskými právy.
+            ]]>
+        </legal-notices>
+    </extension>
+    <products>
+        <product name="InDesign" version="19.0" primary="true" />
+    </products>
+    <author name="BaselineGridAligner" />
+    <components>
+        <component id="cz.baselinegrid.panel">
+            <type>panel</type>
+            <class>BaselineGridAlignerPanel</class>
+            <main-factory>kBaselineGridAlignerPanelImpl</main-factory>
+            <ui-factory>kBaselineGridAlignerPanelWidgetImpl</ui-factory>
+            <menu-path>menu.Window</menu-path>
+            <title>BaselineGridAligner</title>
+            <min-width>220</min-width>
+            <min-height>300</min-height>
+            <default-width>280</default-width>
+            <default-height>400</default-height>
+            <dock-state>floating</dock-state>
+        </component>
+    </components>
+</manifest>
