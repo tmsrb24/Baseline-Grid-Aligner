@@ -1,4 +1,4 @@
-# Baseline Grid Aligner - Standalone Application
+# Baseline-Grid-Aligner
 
 A powerful standalone application for typography alignment and grid management, based on the InDesign plugin "Baseline Grid Aligner".
 
@@ -41,8 +41,8 @@ A powerful standalone application for typography alignment and grid management, 
 ### Development Setup
 1. Clone the repository:
    ```
-   git clone https://github.com/baselinegridaligner/app.git
-   cd app
+   git clone https://github.com/tmsrb24/Baseline-Grid-Aligner.git
+   cd Baseline-Grid-Aligner
    ```
 
 2. Install dependencies:
