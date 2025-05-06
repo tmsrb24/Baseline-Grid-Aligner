@@ -9,6 +9,18 @@ interface ElectronAPI {
   // File operations
   openFile: () => Promise<string | null>;
   saveFile: (options: any) => Promise<string | null>;
+  getDocumentPreview: (filePath: string) => Promise<{
+    fileSize: number;
+    dimensions: {
+      width: number;
+      height: number;
+    };
+    pages: number;
+    previewData: {
+      type: string;
+      content: string;
+    } | null;
+  } | null>;
   
   // Event listeners
   on: (channel: string, callback: Function) => void;

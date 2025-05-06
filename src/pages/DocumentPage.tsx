@@ -100,10 +100,34 @@ const DocumentPage: React.FC = () => {
           {/* Document preview or additional info */}
           <Grid item xs={12} md={6}>
             <Card>
-              <CardContent sx={{ minHeight: 300, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Typography variant="body1" color="text.secondary">
-                  {t('document.preview')}
-                </Typography>
+              <CardContent sx={{ minHeight: 300, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                {currentDocument.preview ? (
+                  currentDocument.preview.type === 'text' ? (
+                    <Box sx={{ width: '100%', height: '100%', overflow: 'auto', p: 2 }}>
+                      <Typography variant="body2" component="pre" sx={{ whiteSpace: 'pre-wrap', fontFamily: 'monospace' }}>
+                        {currentDocument.preview.content}
+                      </Typography>
+                    </Box>
+                  ) : currentDocument.preview.type === 'image' ? (
+                    <Box sx={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <img 
+                        src={currentDocument.preview.content} 
+                        alt={currentDocument.name}
+                        style={{ maxWidth: '100%', maxHeight: '280px', objectFit: 'contain' }}
+                      />
+                    </Box>
+                  ) : (
+                    <Box sx={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Typography variant="body1" color="text.secondary">
+                        {currentDocument.preview.content}
+                      </Typography>
+                    </Box>
+                  )
+                ) : (
+                  <Typography variant="body1" color="text.secondary">
+                    {t('document.preview')}
+                  </Typography>
+                )}
               </CardContent>
             </Card>
           </Grid>

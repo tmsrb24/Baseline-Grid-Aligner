@@ -1,4 +1,12 @@
 /**
+ * Document preview data interface
+ */
+export interface DocumentPreviewData {
+  type: string;
+  content: string;
+}
+
+/**
  * Document data interface
  */
 export interface DocumentData {
@@ -13,6 +21,7 @@ export interface DocumentData {
   };
   pages: number;
   dateOpened: Date;
+  preview: DocumentPreviewData | null;
 }
 
 /**

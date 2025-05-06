@@ -11,6 +11,7 @@ contextBridge.exposeInMainWorld(
     // File operations
     openFile: () => ipcRenderer.invoke('open-file-dialog'),
     saveFile: (options: any) => ipcRenderer.invoke('save-file-dialog', options),
+    getDocumentPreview: (filePath: string) => ipcRenderer.invoke('get-document-preview', filePath),
     
     // Event listeners
     on: (channel: string, callback: Function) => {

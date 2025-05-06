@@ -254,6 +254,72 @@ function setupIpcHandlers() {
     
     return null;
   });
+  
+  // Get document preview
+  ipcMain.handle('get-document-preview', async (event, filePath) => {
+    try {
+      if (!filePath) return null;
+      
+      const fs = require('fs');
+      const path = require('path');
+      const { promisify } = require('util');
+      
+      const readFileAsync = promisify(fs.readFile);
+      const statAsync = promisify(fs.stat);
+      
+      // Get file stats
+      const stats = await statAsync(filePath);
+      const fileSize = Math.round(stats.size / 1024); // Convert to KB
+      
+      // Get file extension
+      const fileExt = path.extname(filePath).toLowerCase().substring(1);
+      
+      // Handle different file types
+      let previewData: any = null;
+      let dimensions = { width: 0, height: 0 };
+      let pages = 1;
+      
+      if (fileExt === 'txt') {
+        // For text files, read the content directly
+        const content = await readFileAsync(filePath, 'utf8');
+        previewData = {
+          type: 'text',
+          content: content.substring(0, 5000) // Limit to first 5000 chars
+        };
+      } else if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExt)) {
+        // For images, read as base64
+        const content = await readFileAsync(filePath);
+        previewData = {
+          type: 'image',
+          content: `data:image/${fileExt === 'jpg' ? 'jpeg' : fileExt};base64,${content.toString('base64')}`
+        };
+        
+        // TODO: Get image dimensions
+      } else if (['pdf', 'docx'].includes(fileExt)) {
+        // For PDFs and DOCX, we'll need to use specialized libraries
+        // For now, just return a placeholder
+        previewData = {
+          type: 'document',
+          content: `Document preview for ${fileExt.toUpperCase()} files is not yet implemented.`
+        };
+        
+        // TODO: Extract PDF/DOCX content and get page count
+        if (fileExt === 'pdf') {
+          pages = 1; // Placeholder
+        }
+      }
+      
+      return {
+        fileSize,
+        dimensions,
+        pages,
+        previewData
+      };
+    } catch (error) {
+      console.error('Error getting document preview:', error);
+      return null;
+    }
+  });
 }
 
 // App event handlers

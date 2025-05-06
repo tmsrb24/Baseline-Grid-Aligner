@@ -193,7 +193,7 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   }, []);
   
   // Handle file opened event
-  const handleFileOpened = (filePath: string) => {
+  const handleFileOpened = async (filePath: string) => {
     try {
       console.log('File opened:', filePath);
       
@@ -202,19 +202,23 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       const fileName = pathParts[pathParts.length - 1];
       const fileExtension = fileName.split('.').pop() || '';
       
+      // Get document preview data
+      const previewData = await window.api.getDocumentPreview(filePath);
+      
       // Create a new document object
       const newDocument: DocumentData = {
         id: Date.now().toString(),
         path: filePath,
         name: fileName,
         type: fileExtension.toLowerCase(),
-        size: 0, // This would need to be determined by reading the file
-        dimensions: {
-          width: 0, // These would need to be determined by reading the file
+        size: previewData?.fileSize || 0,
+        dimensions: previewData?.dimensions || {
+          width: 0,
           height: 0
         },
-        pages: 1, // This would need to be determined by reading the file
-        dateOpened: new Date()
+        pages: previewData?.pages || 1,
+        dateOpened: new Date(),
+        preview: previewData?.previewData || null
       };
       
       // Update the current document
@@ -223,7 +227,6 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       // Clear any selected frames
       setSelectedFrameIds([]);
       
-      // TODO: Load actual document content and parse text frames
       console.log('Document loaded successfully');
     } catch (error) {
       console.error('Error handling opened file:', error);
