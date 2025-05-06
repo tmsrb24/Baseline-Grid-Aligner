@@ -183,10 +183,52 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     // Listen for save settings event from main process
     window.api.on('save-settings', saveSettings);
     
+    // Listen for file opened event from main process
+    window.api.on('file-opened', handleFileOpened);
+    
     return () => {
       window.api.removeAllListeners('save-settings');
+      window.api.removeAllListeners('file-opened');
     };
   }, []);
+  
+  // Handle file opened event
+  const handleFileOpened = (filePath: string) => {
+    try {
+      console.log('File opened:', filePath);
+      
+      // Extract file information
+      const pathParts = filePath.split(/[/\\]/);
+      const fileName = pathParts[pathParts.length - 1];
+      const fileExtension = fileName.split('.').pop() || '';
+      
+      // Create a new document object
+      const newDocument: DocumentData = {
+        id: Date.now().toString(),
+        path: filePath,
+        name: fileName,
+        type: fileExtension.toLowerCase(),
+        size: 0, // This would need to be determined by reading the file
+        dimensions: {
+          width: 0, // These would need to be determined by reading the file
+          height: 0
+        },
+        pages: 1, // This would need to be determined by reading the file
+        dateOpened: new Date()
+      };
+      
+      // Update the current document
+      setCurrentDocument(newDocument);
+      
+      // Clear any selected frames
+      setSelectedFrameIds([]);
+      
+      // TODO: Load actual document content and parse text frames
+      console.log('Document loaded successfully');
+    } catch (error) {
+      console.error('Error handling opened file:', error);
+    }
+  };
   
   // Actions
   const openDocument = async () => {

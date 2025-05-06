@@ -201,8 +201,12 @@ async function openDocument() {
   });
   
   if (!canceled && filePaths.length > 0) {
+    console.log('File selected:', filePaths[0]);
     mainWindow.webContents.send('file-opened', filePaths[0]);
+    return filePaths[0];
   }
+  
+  return null;
 }
 
 // Show about dialog
