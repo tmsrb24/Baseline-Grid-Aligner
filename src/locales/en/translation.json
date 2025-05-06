@@ -1,0 +1,145 @@
+{
+  "app": {
+    "title": "Baseline Grid Aligner",
+    "description": "A powerful standalone application for typography alignment and grid management"
+  },
+  "menu": {
+    "file": "File",
+    "edit": "Edit",
+    "view": "View",
+    "tools": "Tools",
+    "help": "Help",
+    "openDocument": "Open Document",
+    "saveSettings": "Save Settings",
+    "exportSettings": "Export Settings",
+    "importSettings": "Import Settings",
+    "quit": "Quit",
+    "preferences": "Preferences",
+    "documentation": "Documentation",
+    "about": "About"
+  },
+  "sidebar": {
+    "document": "Document",
+    "alignment": "Alignment",
+    "grid": "Grid",
+    "statistics": "Statistics",
+    "presets": "Presets"
+  },
+  "document": {
+    "title": "Document",
+    "open": "Open Document",
+    "recent": "Recent Documents",
+    "noDocuments": "No recent documents",
+    "documentInfo": "Document Information",
+    "fileName": "File Name",
+    "fileType": "File Type",
+    "fileSize": "File Size",
+    "dimensions": "Dimensions",
+    "pages": "Pages"
+  },
+  "alignment": {
+    "title": "Alignment",
+    "type": "Alignment Type",
+    "types": {
+      "tracking": "Tracking",
+      "baseline": "Baseline",
+      "wordSpacing": "Word Spacing",
+      "combined": "Combined"
+    },
+    "settings": "Alignment Settings",
+    "highlightColor": "Highlight Color",
+    "wordSpacingFactor": "Word Spacing Factor",
+    "autoApply": "Auto Apply",
+    "showWarnings": "Show Warnings",
+    "preview": "Preview",
+    "apply": "Apply",
+    "reset": "Reset",
+    "batch": "Batch Process",
+    "selectAll": "Select All",
+    "selectNone": "Select None",
+    "invertSelection": "Invert Selection"
+  },
+  "grid": {
+    "title": "Grid",
+    "settings": "Grid Settings",
+    "baselineSize": "Baseline Size",
+    "gridColor": "Grid Color",
+    "gridOpacity": "Grid Opacity",
+    "showGrid": "Show Grid",
+    "snapToGrid": "Snap to Grid",
+    "gridOffset": "Grid Offset",
+    "horizontalGrid": "Horizontal Grid",
+    "verticalGrid": "Vertical Grid",
+    "horizontalSpacing": "Horizontal Spacing",
+    "verticalSpacing": "Vertical Spacing"
+  },
+  "statistics": {
+    "title": "Statistics",
+    "textFrames": "Text Frames",
+    "characters": "Characters",
+    "words": "Words",
+    "lines": "Lines",
+    "paragraphs": "Paragraphs",
+    "alignmentIssues": "Alignment Issues",
+    "baselineDeviations": "Baseline Deviations",
+    "trackingIssues": "Tracking Issues",
+    "wordSpacingIssues": "Word Spacing Issues",
+    "generateReport": "Generate Report",
+    "exportReport": "Export Report"
+  },
+  "presets": {
+    "title": "Presets",
+    "save": "Save Preset",
+    "load": "Load Preset",
+    "delete": "Delete Preset",
+    "import": "Import Presets",
+    "export": "Export Presets",
+    "presetName": "Preset Name",
+    "presetDescription": "Preset Description",
+    "noPresets": "No presets saved",
+    "confirmDelete": "Are you sure you want to delete this preset?"
+  },
+  "settings": {
+    "title": "Settings",
+    "general": "General",
+    "appearance": "Appearance",
+    "language": "Language",
+    "theme": "Theme",
+    "themes": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "advanced": "Advanced",
+    "resetSettings": "Reset Settings",
+    "confirmReset": "Are you sure you want to reset all settings to default?",
+    "keyboardShortcuts": "Keyboard Shortcuts",
+    "customizeShortcuts": "Customize Shortcuts"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "apply": "Apply",
+    "reset": "Reset",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "loading": "Loading...",
+    "processing": "Processing...",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning"
+  },
+  "errors": {
+    "fileNotFound": "File not found",
+    "invalidFile": "Invalid file format",
+    "unsupportedFile": "Unsupported file format",
+    "readError": "Error reading file",
+    "writeError": "Error writing file",
+    "processingError": "Error processing document",
+    "genericError": "An error occurred"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "app": {
+    "title": "Baseline Grid Aligner",
+    "description": "Výkonná samostatná aplikace pro zarovnání typografie a správu mřížky"
+  },
+  "menu": {
+    "file": "Soubor",
+    "edit": "Úpravy",
+    "view": "Zobrazení",
+    "tools": "Nástroje",
+    "help": "Nápověda",
+    "openDocument": "Otevřít dokument",
+    "saveSettings": "Uložit nastavení",
+    "exportSettings": "Exportovat nastavení",
+    "importSettings": "Importovat nastavení",
+    "quit": "Ukončit",
+    "preferences": "Předvolby",
+    "documentation": "Dokumentace",
+    "about": "O aplikaci"
+  },
+  "sidebar": {
+    "document": "Dokument",
+    "alignment": "Zarovnání",
+    "grid": "Mřížka",
+    "statistics": "Statistiky",
+    "presets": "Předvolby"
+  },
+  "document": {
+    "title": "Dokument",
+    "open": "Otevřít dokument",
+    "recent": "Nedávné dokumenty",
+    "noDocuments": "Žádné nedávné dokumenty",
+    "documentInfo": "Informace o dokumentu",
+    "fileName": "Název souboru",
+    "fileType": "Typ souboru",
+    "fileSize": "Velikost souboru",
+    "dimensions": "Rozměry",
+    "pages": "Stránky"
+  },
+  "alignment": {
+    "title": "Zarovnání",
+    "type": "Typ zarovnání",
+    "types": {
+      "tracking": "Tracking",
+      "baseline": "Baseline",
+      "wordSpacing": "Mezislovní mezery",
+      "combined": "Kombinované"
+    },
+    "settings": "Nastavení zarovnání",
+    "highlightColor": "Barva zvýraznění",
+    "wordSpacingFactor": "Faktor mezislovních mezer",
+    "autoApply": "Automaticky aplikovat",
+    "showWarnings": "Zobrazovat varování",
+    "preview": "Náhled",
+    "apply": "Aplikovat",
+    "reset": "Reset",
+    "batch": "Dávkové zpracování",
+    "selectAll": "Vybrat vše",
+    "selectNone": "Zrušit výběr",
+    "invertSelection": "Invertovat výběr"
+  },
+  "grid": {
+    "title": "Mřížka",
+    "settings": "Nastavení mřížky",
+    "baselineSize": "Velikost baseline",
+    "gridColor": "Barva mřížky",
+    "gridOpacity": "Průhlednost mřížky",
+    "showGrid": "Zobrazit mřížku",
+    "snapToGrid": "Přichytit k mřížce",
+    "gridOffset": "Odsazení mřížky",
+    "horizontalGrid": "Horizontální mřížka",
+    "verticalGrid": "Vertikální mřížka",
+    "horizontalSpacing": "Horizontální mezery",
+    "verticalSpacing": "Vertikální mezery"
+  },
+  "statistics": {
+    "title": "Statistiky",
+    "textFrames": "Textové rámce",
+    "characters": "Znaky",
+    "words": "Slova",
+    "lines": "Řádky",
+    "paragraphs": "Odstavce",
+    "alignmentIssues": "Problémy se zarovnáním",
+    "baselineDeviations": "Odchylky od baseline",
+    "trackingIssues": "Problémy s trackingem",
+    "wordSpacingIssues": "Problémy s mezislovními mezerami",
+    "generateReport": "Generovat zprávu",
+    "exportReport": "Exportovat zprávu"
+  },
+  "presets": {
+    "title": "Předvolby",
+    "save": "Uložit předvolbu",
+    "load": "Načíst předvolbu",
+    "delete": "Smazat předvolbu",
+    "import": "Importovat předvolby",
+    "export": "Exportovat předvolby",
+    "presetName": "Název předvolby",
+    "presetDescription": "Popis předvolby",
+    "noPresets": "Žádné uložené předvolby",
+    "confirmDelete": "Opravdu chcete smazat tuto předvolbu?"
+  },
+  "settings": {
+    "title": "Nastavení",
+    "general": "Obecné",
+    "appearance": "Vzhled",
+    "language": "Jazyk",
+    "theme": "Motiv",
+    "themes": {
+      "light": "Světlý",
+      "dark": "Tmavý",
+      "system": "Systémový"
+    },
+    "advanced": "Pokročilé",
+    "resetSettings": "Obnovit výchozí nastavení",
+    "confirmReset": "Opravdu chcete obnovit všechna nastavení na výchozí hodnoty?",
+    "keyboardShortcuts": "Klávesové zkratky",
+    "customizeShortcuts": "Přizpůsobit zkratky"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Zrušit",
+    "save": "Uložit",
+    "delete": "Smazat",
+    "edit": "Upravit",
+    "apply": "Aplikovat",
+    "reset": "Reset",
+    "close": "Zavřít",
+    "yes": "Ano",
+    "no": "Ne",
+    "loading": "Načítání...",
+    "processing": "Zpracování...",
+    "success": "Úspěch",
+    "error": "Chyba",
+    "warning": "Varování"
+  },
+  "errors": {
+    "fileNotFound": "Soubor nenalezen",
+    "invalidFile": "Neplatný formát souboru",
+    "unsupportedFile": "Nepodporovaný formát souboru",
+    "readError": "Chyba při čtení souboru",
+    "writeError": "Chyba při zápisu souboru",
+    "processingError": "Chyba při zpracování dokumentu",
+    "genericError": "Došlo k chybě"
+  }
+}
