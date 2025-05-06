@@ -9,6 +9,7 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  SelectChangeEvent,
   TextField,
   Switch,
   FormControlLabel,
@@ -65,7 +66,7 @@ const AlignmentPage: React.FC = () => {
   };
   
   // Handle alignment type change
-  const handleAlignmentTypeChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleAlignmentTypeChange = (event: SelectChangeEvent) => {
     handleSettingChange('type', event.target.value as AlignmentSettings['type']);
   };
   

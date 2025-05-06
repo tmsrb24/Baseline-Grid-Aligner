@@ -210,7 +210,7 @@ const PresetsPage: React.FC = () => {
               </Alert>
             ) : (
               <List>
-                {presets.map((preset) => (
+                {presets.map((preset: Preset) => (
                   <React.Fragment key={preset.id}>
                     <ListItem 
                       selected={activePresetId === preset.id}
@@ -321,7 +321,7 @@ const PresetsPage: React.FC = () => {
                 <TextField
                   label={t('presets.presetName')}
                   value={newPresetName}
-                  onChange={(e) => setNewPresetName(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewPresetName(e.target.value)}
                   fullWidth
                   required
                 />
@@ -329,7 +329,7 @@ const PresetsPage: React.FC = () => {
                 <TextField
                   label={t('presets.presetDescription')}
                   value={newPresetDescription}
-                  onChange={(e) => setNewPresetDescription(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewPresetDescription(e.target.value)}
                   fullWidth
                   multiline
                   rows={3}

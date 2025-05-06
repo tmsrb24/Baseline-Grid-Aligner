@@ -13,7 +13,10 @@
     "eject": "react-scripts eject",
     "package": "electron-builder build --mac --win --linux -c.extraMetadata.main=dist/main.js --publish never"
   },
-  "author": "BaselineGridAligner Team",
+  "author": {
+    "name": "BaselineGridAligner Team",
+    "email": "info@baselinegridaligner.com"
+  },
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -67,22 +70,53 @@
       "package.json"
     ],
     "directories": {
-      "buildResources": "assets"
+      "buildResources": "assets",
+      "output": "release"
     },
     "mac": {
-      "category": "public.app-category.graphics-design"
+      "category": "public.app-category.graphics-design",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "assets/icon.icns",
+      "darkModeSupport": true
     },
     "win": {
       "target": [
-        "nsis"
-      ]
+        "nsis",
+        "portable"
+      ],
+      "icon": "assets/icon.ico"
     },
     "linux": {
       "target": [
         "AppImage",
-        "deb"
+        "deb",
+        "rpm"
       ],
-      "category": "Graphics"
+      "category": "Graphics",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
     }
   }
 }

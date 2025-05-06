@@ -8,6 +8,7 @@ import {
   FormControl,
   InputLabel,
   Select,
+  SelectChangeEvent,
   MenuItem,
   Switch,
   FormControlLabel,
@@ -141,7 +142,7 @@ const SettingsPage: React.FC = () => {
                     labelId="language-select-label"
                     value={localLanguage}
                     label={t('settings.language')}
-                    onChange={(e) => setLocalLanguage(e.target.value as string)}
+                    onChange={(e: SelectChangeEvent) => setLocalLanguage(e.target.value)}
                     startAdornment={<LanguageIcon sx={{ mr: 1 }} />}
                   >
                     <MenuItem value="en">English</MenuItem>
@@ -160,7 +161,7 @@ const SettingsPage: React.FC = () => {
                     labelId="theme-select-label"
                     value={localTheme}
                     label={t('settings.theme')}
-                    onChange={(e) => setLocalTheme(e.target.value as string)}
+                    onChange={(e: SelectChangeEvent) => setLocalTheme(e.target.value)}
                     startAdornment={<ThemeIcon sx={{ mr: 1 }} />}
                   >
                     <MenuItem value="light">{t('settings.themes.light')}</MenuItem>
@@ -305,7 +306,7 @@ const SettingsPage: React.FC = () => {
             fullWidth
             variant="outlined"
             value={newShortcut}
-            onChange={(e) => setNewShortcut(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewShortcut(e.target.value)}
           />
         </DialogContent>
         <DialogActions>

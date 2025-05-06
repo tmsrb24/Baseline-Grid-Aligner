@@ -96,7 +96,7 @@ const StatisticsPage: React.FC = () => {
   // Toggle issue selection
   const toggleIssueSelection = (id: string) => {
     if (selectedIssues.includes(id)) {
-      setSelectedIssues(selectedIssues.filter(issueId => issueId !== id));
+      setSelectedIssues(selectedIssues.filter((issueId: string) => issueId !== id));
     } else {
       setSelectedIssues([...selectedIssues, id]);
     }
@@ -104,7 +104,7 @@ const StatisticsPage: React.FC = () => {
   
   // Select all issues
   const selectAllIssues = () => {
-    setSelectedIssues(mockIssues.map(issue => issue.id));
+    setSelectedIssues(mockIssues.map((issue: AlignmentIssue) => issue.id));
   };
   
   // Clear selection
@@ -378,7 +378,7 @@ const StatisticsPage: React.FC = () => {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {mockIssues.map((issue) => (
+                    {mockIssues.map((issue: AlignmentIssue) => (
                       <TableRow 
                         key={issue.id}
                         selected={selectedIssues.includes(issue.id)}
@@ -407,7 +407,7 @@ const StatisticsPage: React.FC = () => {
                           <Button
                             size="small"
                             variant="outlined"
-                            onClick={(e) => {
+                            onClick={(e: React.MouseEvent) => {
                               e.stopPropagation();
                               // Handle fix action
                             }}

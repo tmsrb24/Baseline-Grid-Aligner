@@ -52,7 +52,7 @@ const GridPage: React.FC = () => {
   };
   
   // Handle grid opacity change
-  const handleGridOpacityChange = (event: React.ChangeEvent<{}>, value: number | number[]) => {
+  const handleGridOpacityChange = (_event: Event, value: number | number[]) => {
     handleSettingChange('gridOpacity', value as number);
   };
   
@@ -192,7 +192,7 @@ const GridPage: React.FC = () => {
                     max={1}
                     step={0.05}
                     valueLabelDisplay="auto"
-                    valueLabelFormat={(value) => `${Math.round(value * 100)}%`}
+                    valueLabelFormat={(value: number) => `${Math.round(value * 100)}%`}
                   />
                 </Grid>
                 

@@ -1,7 +1,7 @@
 import { app, BrowserWindow, ipcMain, dialog, Menu } from 'electron';
 import * as path from 'path';
 import * as isDev from 'electron-is-dev';
-import * as Store from 'electron-store';
+import Store from 'electron-store';
 
 // Initialize the settings store
 const store = new Store();
