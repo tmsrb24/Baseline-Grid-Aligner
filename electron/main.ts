@@ -295,17 +295,42 @@ function setupIpcHandlers() {
         };
         
         // TODO: Get image dimensions
-      } else if (['pdf', 'docx'].includes(fileExt)) {
-        // For PDFs and DOCX, we'll need to use specialized libraries
-        // For now, just return a placeholder
-        previewData = {
-          type: 'document',
-          content: `Document preview for ${fileExt.toUpperCase()} files is not yet implemented.`
-        };
-        
-        // TODO: Extract PDF/DOCX content and get page count
-        if (fileExt === 'pdf') {
-          pages = 1; // Placeholder
+      } else if (fileExt === 'pdf') {
+        try {
+          // For PDFs, use pdf-parse
+          const pdfParse = require('pdf-parse');
+          const dataBuffer = await readFileAsync(filePath);
+          const pdfData = await pdfParse(dataBuffer);
+          
+          // Get page count and content
+          pages = pdfData.numpages || 1;
+          previewData = {
+            type: 'text',
+            content: pdfData.text.substring(0, 5000) // Limit to first 5000 chars
+          };
+        } catch (error) {
+          console.error('Error parsing PDF:', error);
+          previewData = {
+            type: 'document',
+            content: `Error parsing PDF: ${error.message}`
+          };
+        }
+      } else if (fileExt === 'docx') {
+        try {
+          // For DOCX, use mammoth
+          const mammoth = require('mammoth');
+          const result = await mammoth.extractRawText({path: filePath});
+          
+          previewData = {
+            type: 'text',
+            content: result.value.substring(0, 5000) // Limit to first 5000 chars
+          };
+        } catch (error) {
+          console.error('Error parsing DOCX:', error);
+          previewData = {
+            type: 'document',
+            content: `Error parsing DOCX: ${error.message}`
+          };
         }
       }
       
